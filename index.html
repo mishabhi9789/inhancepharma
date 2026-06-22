@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inhance Pharmaceuticals Pvt. Ltd. | Premium Derma & Skincare Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        derma: {
+                            navy: '#0F2A4A',       /* Deep Clinical Navy (Trust & Medicine) */
+                            gold: '#C5A880',       /* Soft Warm Gold/Champagne (Aesthetic & Premium Skincare) */
+                            peach: '#FAF2ED',      /* Soft Skin Peach (Background & Clean feeling) */
+                            slate: '#334155',      /* Text Slate */
+                            emerald: '#2D6A4F',    /* Scientific Herbal Green */
+                            lightGold: '#F5EBE0'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .nav-transition {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .backdrop-blur-nav {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+    </style>
+</head>
+<body class="bg-[#FAF9F6] text-derma-slate font-sans leading-relaxed selection:bg-derma-gold selection:text-white">
+
+    <!-- Header / Navigation Bar -->
+    <header class="fixed w-full top-0 z-50 nav-transition border-b border-gray-150/40" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 md:h-24 transition-all duration-300" id="navbar-container">
+                <!-- Logo & Brand Name -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="bg-white p-1 rounded-xl shadow-md border border-gray-100 flex items-center justify-center h-14 w-14 overflow-hidden">
+                        <img src="WhatsApp Image 2026-06-23 at 12.59.39 AM.jpeg" alt="Inhance Logo" class="h-full w-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/0f2a4a?text=IP';">
+                    </div>
+                    <div>
+                        <span class="text-xl sm:text-2xl font-extrabold text-derma-navy tracking-tight block">INHANCE</span>
+                        <span class="text-[10px] font-bold text-derma-gold tracking-widest block uppercase -mt-1">Pharmaceuticals</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 font-semibold text-sm tracking-wide">
+                    <a href="#home" class="text-derma-navy hover:text-derma-gold transition duration-300 py-2 border-b-2 border-transparent hover:border-derma-gold">Home</a>
+                    <a href="#philosophy" class="text-derma-navy hover:text-derma-gold transition duration-300 py-2 border-b-2 border-transparent hover:border-derma-gold">Our Philosophy</a>
+                    <a href="#leadership" class="text-derma-navy hover:text-derma-gold transition duration-300 py-2 border-b-2 border-transparent hover:border-derma-gold">Leadership</a>
+                    <a href="#products" class="text-derma-navy hover:text-derma-gold transition duration-300 py-2 border-b-2 border-transparent hover:border-derma-gold">Derma Range</a>
+                    <a href="#quality" class="text-derma-navy hover:text-derma-gold transition duration-300 py-2 border-b-2 border-transparent hover:border-derma-gold">R&D Quality</a>
+                    <a href="#contact" class="text-derma-navy hover:text-derma-gold transition duration-300 py-2 border-b-2 border-transparent hover:border-derma-gold">Contact Us</a>
+                </nav>
+
+                <!-- Action Button for Business Inquiry -->
+                <div class="hidden lg:block">
+                    <a href="#contact" class="bg-gradient-to-r from-derma-navy to-slate-800 hover:from-derma-gold hover:to-amber-600 text-white hover:text-derma-navy font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-full transition duration-300 shadow-lg shadow-blue-900/10 hover:shadow-amber-900/10">
+                        Inquire Now <i class="fa-solid fa-envelope ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-derma-navy hover:text-derma-gold focus:outline-none p-2 rounded-lg bg-gray-100/50">
+                        <i class="fa-solid fa-bars-staggered text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-150 px-4 pt-4 pb-8 space-y-4 shadow-xl">
+            <a href="#home" onclick="toggleMenu()" class="block py-3 text-derma-navy hover:text-derma-gold font-bold border-b border-gray-50"><i class="fa-solid fa-house-chimney mr-3 text-derma-gold"></i>Home</a>
+            <a href="#philosophy" onclick="toggleMenu()" class="block py-3 text-derma-navy hover:text-derma-gold font-bold border-b border-gray-50"><i class="fa-solid fa-seedling mr-3 text-derma-gold"></i>Our Philosophy</a>
+            <a href="#leadership" onclick="toggleMenu()" class="block py-3 text-derma-navy hover:text-derma-gold font-bold border-b border-gray-50"><i class="fa-solid fa-users mr-3 text-derma-gold"></i>Our Leadership</a>
+            <a href="#products" onclick="toggleMenu()" class="block py-3 text-derma-navy hover:text-derma-gold font-bold border-b border-gray-50"><i class="fa-solid fa-spray-can-sparkles mr-3 text-derma-gold"></i>Derma Range</a>
+            <a href="#quality" onclick="toggleMenu()" class="block py-3 text-derma-navy hover:text-derma-gold font-bold border-b border-gray-50"><i class="fa-solid fa-vial-virus mr-3 text-derma-gold"></i>R&D Quality</a>
+            <a href="#contact" onclick="toggleMenu()" class="block py-3 text-derma-navy hover:text-derma-gold font-bold"><i class="fa-solid fa-envelope mr-3 text-derma-gold"></i>Contact Us</a>
+            <a href="#contact" onclick="toggleMenu()" class="w-full text-center block bg-derma-navy text-white font-bold py-3.5 rounded-xl uppercase tracking-wider text-xs">Send Inquiry</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-28 pb-16 md:pt-44 md:pb-32 bg-gradient-to-b from-[#FDF9F6] via-[#FAF3EC] to-[#FAF9F6] relative overflow-hidden">
+        <!-- Aesthetic biological cellular circles in background -->
+        <div class="absolute right-0 top-1/4 w-96 h-96 bg-derma-gold/10 rounded-full filter blur-3xl opacity-60 animate-pulse-slow"></div>
+        <div class="absolute left-1/4 bottom-10 w-80 h-80 bg-red-100/30 rounded-full filter blur-2xl opacity-50"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Area -->
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-amber-100/50 border border-amber-200/60 text-amber-800 px-3.5 py-2 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-widest">
+                        <i class="fa-solid fa-shield-virus animate-bounce text-derma-gold"></i>
+                        <span>WHO-GMP Certified Skincare & Trichology</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-derma-navy leading-[1.1]">
+                        Advanced Skincare, <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-derma-navy via-slate-700 to-derma-gold">Rooted in Science.</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-derma-slate/90 max-w-xl mx-auto lg:mx-0 font-medium">
+                        Inhance Pharmaceuticals Pvt. Ltd. lekar aaye hain globally certified dermatologist-recommended therapeutic skincare formulations. Glow, care aur healing ka scientific fusion.
+                    </p>
+                    
+                    <!-- Quick Trust Indicators -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 text-xs font-bold text-derma-navy/80 pt-2">
+                        <span class="bg-white/80 border border-gray-150 py-1.5 px-3 rounded-full flex items-center shadow-sm"><i class="fa-solid fa-circle-check text-derma-gold mr-1.5"></i> Dermatologically Tested</span>
+                        <span class="bg-white/80 border border-gray-150 py-1.5 px-3 rounded-full flex items-center shadow-sm"><i class="fa-solid fa-circle-check text-derma-gold mr-1.5"></i> Paraben Free</span>
+                        <span class="bg-white/80 border border-gray-150 py-1.5 px-3 rounded-full flex items-center shadow-sm"><i class="fa-solid fa-circle-check text-derma-gold mr-1.5"></i> Non-Comedogenic</span>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#products" class="bg-gradient-to-r from-derma-navy to-slate-800 hover:from-derma-gold hover:to-amber-600 text-white font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 text-center uppercase tracking-wider text-xs">
+                            Explore Derma Range <i class="fa-solid fa-bottle-droplet ml-2"></i>
+                        </a>
+                        <a href="#contact" class="bg-white border-2 border-derma-gold/40 hover:border-derma-navy text-derma-navy hover:bg-derma-peach/50 font-bold px-8 py-4 rounded-xl transition duration-300 text-center uppercase tracking-wider text-xs">
+                            Connect With Us <i class="fa-solid fa-envelope ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hero Image Area (Premium Skincare Visual representation) -->
+                <div class="relative flex justify-center lg:justify-end">
+                    <div class="w-full max-w-md bg-white rounded-[2rem] shadow-2xl shadow-blue-950/5 p-6 border border-gray-100 relative animate-float">
+                        <div class="absolute -top-5 -left-5 bg-[#C5A880]/15 text-derma-navy border border-derma-gold/30 p-4 rounded-2xl shadow-lg backdrop-blur-md">
+                            <i class="fa-solid fa-flask-vial text-3xl text-derma-gold"></i>
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-derma-navy text-white p-5 rounded-2xl shadow-xl text-center border-2 border-white">
+                            <span class="block text-2xl font-black text-derma-gold">100%</span>
+                            <span class="text-[9px] uppercase tracking-widest font-bold">Clinical Efficacy</span>
+                        </div>
+                        
+                        <!-- Premium Cosmetic Bottle SVG Graphic with corrected Brand label -->
+                        <div class="border-2 border-dashed border-derma-gold/20 rounded-[1.5rem] p-8 bg-gradient-to-br from-derma-peach/40 via-white to-white flex flex-col items-center justify-center text-center min-h-[380px] overflow-hidden relative">
+                            <!-- Glowing Aura behind bottle -->
+                            <div class="absolute w-44 h-44 bg-amber-100 rounded-full filter blur-xl opacity-70 z-0"></div>
+                            
+                            <!-- Bottle SVG -->
+                            <div class="relative z-10 w-28 h-44 mb-4 flex items-center justify-center">
+                                <svg viewBox="0 0 100 200" class="w-full h-full drop-shadow-2xl" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Cap -->
+                                    <rect x="35" y="10" width="30" height="20" rx="3" fill="#C5A880"/>
+                                    <!-- Gold Ring -->
+                                    <rect x="30" y="30" width="40" height="6" rx="1" fill="#C5A880"/>
+                                    <!-- Glass Body -->
+                                    <rect x="20" y="36" width="60" height="150" rx="20" fill="white" stroke="#0F2A4A" stroke-width="4"/>
+                                    <!-- Dropper pipette view inside -->
+                                    <line x1="50" y1="36" x2="50" y2="130" stroke="#E29B8C" stroke-width="3" stroke-linecap="round"/>
+                                    <!-- Liquid line -->
+                                    <path d="M 22 110 Q 50 120, 78 110 L 78 170 Q 50 180, 22 170 Z" fill="#FAF2ED" fill-opacity="0.85"/>
+                                    <!-- Brand Label inside (Inhance Pharmaceuticals) -->
+                                    <rect x="28" y="60" width="44" height="40" rx="4" fill="#0F2A4A"/>
+                                    <text x="50" y="76" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="900" fill="#C5A880" text-anchor="middle">INHANCE</text>
+                                    <text x="50" y="86" font-family="'Plus Jakarta Sans', sans-serif" font-size="3.5" font-weight="bold" fill="white" text-anchor="middle">PHARMACEUTICALS</text>
+                                    <text x="50" y="94" font-family="'Plus Jakarta Sans', sans-serif" font-size="4" font-weight="medium" fill="#94A3B8" text-anchor="middle">VITAMIN C SERUM</text>
+                                </svg>
+                            </div>
+                            
+                            <h3 class="text-xl font-extrabold text-derma-navy relative z-10">Advanced Derma-Cosmetics</h3>
+                            <p class="text-gray-500 text-xs max-w-xs relative z-10 mt-1">Formulations carefully balanced to repair the skin barrier and restore natural radiance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skincare Philosophy Section -->
+    <section id="philosophy" class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-derma-gold font-bold text-xs uppercase tracking-widest block mb-2">Our Core Science</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-derma-navy">Skin Health Founded on Pure Science</h2>
+                <div class="h-1 w-20 bg-derma-gold mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-derma-slate/85 font-medium">
+                    Skincare cosmetics se badhkar hai. Yeh swasthya ka ek hissa hai. Inhance Pharmaceuticals dermatological standards ko dhyan me rakhkar naye and highly effective molecule formulations banata hai.
+                </p>
+            </div>
+
+            <!-- Pillars of Excellence -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Hypoallergenic & Safe -->
+                <div class="bg-[#FAF9F6] p-8 rounded-2xl hover:shadow-2xl hover:shadow-amber-900/5 hover:-translate-y-1.5 transition duration-300 border-t-4 border-derma-navy flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-blue-50 text-derma-navy rounded-2xl flex items-center justify-center mb-6 text-2xl shadow-inner">
+                            <i class="fa-solid fa-feather"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-derma-navy">Dermatologically Safe</h3>
+                        <p class="text-derma-slate/80 text-sm">
+                            Humare sabhi creams, face wash aur formulations clinically non-irritating hain. Sensitive skin ke liye hum chemical compositions ka balance strict tests ke baad determine karte hain.
+                        </p>
+                    </div>
+                    <span class="text-xs text-derma-gold font-bold uppercase tracking-wider mt-6 block">0% Harsh Chemicals</span>
+                </div>
+
+                <!-- Card 2: Bio-active Ingredients -->
+                <div class="bg-[#FAF9F6] p-8 rounded-2xl hover:shadow-2xl hover:shadow-amber-900/5 hover:-translate-y-1.5 transition duration-300 border-t-4 border-derma-gold flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-amber-50 text-derma-gold rounded-2xl flex items-center justify-center mb-6 text-2xl shadow-inner">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-derma-navy">Bio-Active Ingredients</h3>
+                        <p class="text-derma-slate/80 text-sm">
+                            Hyaluronic Acid, Vitamin C, Salicylic Acid, Ceramide aur Peptide jaise active molecules ka sahi combination use kiya jata hai taaki skin cell levels pe dynamic transformation dikhe.
+                        </p>
+                    </div>
+                    <span class="text-xs text-derma-gold font-bold uppercase tracking-wider mt-6 block">Targeted Cell Treatment</span>
+                </div>
+
+                <!-- Card 3: Trichology Specialists -->
+                <div class="bg-[#FAF9F6] p-8 rounded-2xl hover:shadow-2xl hover:shadow-amber-900/5 hover:-translate-y-1.5 transition duration-300 border-t-4 border-emerald-600 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-emerald-50 text-emerald-700 rounded-2xl flex items-center justify-center mb-6 text-2xl shadow-inner">
+                            <i class="fa-solid fa-scissors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-derma-navy">Advanced Trichology</h3>
+                        <p class="text-derma-slate/80 text-sm">
+                            Hair health aur scalp disorders (Dandruff, Alopecia, Hair Thinning) ke liye humare pass customized shampoos, anti-hairfall serums aur nutrient formulas range available hai.
+                        </p>
+                    </div>
+                    <span class="text-xs text-emerald-700 font-bold uppercase tracking-wider mt-6 block">Scalp & Hair Protection</span>
+                </div>
+            </div>
+
+            <!-- Standard Trust Seals Icons Section -->
+            <div class="mt-16 bg-derma-peach rounded-[2rem] p-8 md:p-10 border border-amber-200/40">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+                    <div class="flex flex-col items-center">
+                        <i class="fa-solid fa-ban text-3xl text-derma-navy mb-2"></i>
+                        <span class="text-xs font-bold text-derma-navy">Paraben Free</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fa-solid fa-droplet-slash text-3xl text-derma-navy mb-2"></i>
+                        <span class="text-xs font-bold text-derma-navy">Sulphate Free</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fa-solid fa-leaf text-3xl text-derma-navy mb-2"></i>
+                        <span class="text-xs font-bold text-derma-navy">100% Vegan</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fa-solid fa-heart text-3xl text-derma-navy mb-2"></i>
+                        <span class="text-xs font-bold text-derma-navy">Cruelty Free</span>
+                    </div>
+                    <div class="col-span-2 md:col-span-1 flex flex-col items-center">
+                        <i class="fa-solid fa-shield-halved text-3xl text-derma-navy mb-2"></i>
+                        <span class="text-xs font-bold text-derma-navy">GMP Approved</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leadership Team Section (Corrected Names) -->
+            <div id="leadership" class="mt-20 border-t border-gray-150/60 pt-16 scroll-mt-24">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-derma-gold font-bold text-xs uppercase tracking-widest block mb-2">Our Pillars of Trust</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-derma-navy">Our Visionary Leadership</h2>
+                    <p class="mt-3 text-derma-slate/80 text-sm font-semibold">Inhance Pharmaceuticals Pvt. Ltd. ko safe aur innovative healthcare me aage rakhne wale humare pioneers:</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto px-4">
+                    <!-- Managing Director Card -->
+                    <div class="bg-[#FAF9F6] p-8 rounded-3xl border border-gray-200/60 flex flex-col items-center text-center hover:shadow-xl transition duration-300 relative group overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-[#FAF2ED]/30 to-white -z-10"></div>
+                        <div class="w-24 h-24 bg-gradient-to-tr from-derma-navy to-slate-700 text-white rounded-full flex items-center justify-center text-3xl font-bold shadow-lg mb-4 border-2 border-derma-gold group-hover:scale-105 transition duration-300">
+                            AT
+                        </div>
+                        <h4 class="text-xl font-black text-derma-navy">Anoop Tripathi</h4>
+                        <span class="text-xs font-bold text-derma-gold uppercase tracking-widest block mt-1">Managing Director</span>
+                        <div class="h-0.5 w-12 bg-derma-gold/40 my-3"></div>
+                        <p class="text-derma-slate/85 text-xs leading-relaxed">
+                            Shri Anoop Tripathi ji ke netrutva (leadership) me brand clinical standards aur innovative skincare formulations me naye aayam sthapit kar raha hai.
+                        </p>
+                    </div>
+                    <!-- Director Card -->
+                    <div class="bg-[#FAF9F6] p-8 rounded-3xl border border-gray-200/60 flex flex-col items-center text-center hover:shadow-xl transition duration-300 relative group overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-[#FAF2ED]/30 to-white -z-10"></div>
+                        <div class="w-24 h-24 bg-gradient-to-tr from-derma-navy to-slate-700 text-white rounded-full flex items-center justify-center text-3xl font-bold shadow-lg mb-4 border-2 border-derma-gold group-hover:scale-105 transition duration-300">
+                            AP
+                        </div>
+                        <h4 class="text-xl font-black text-derma-navy">Amla Prasad</h4>
+                        <span class="text-xs font-bold text-derma-gold uppercase tracking-widest block mt-1">Director</span>
+                        <div class="h-0.5 w-12 bg-derma-gold/40 my-3"></div>
+                        <p class="text-derma-slate/85 text-xs leading-relaxed">
+                            Shri Amla Prasad ji strict operational and chemical safety standards maintain karke har batch ko premium, side-effect free aur effective banate hain.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Products Catalog Section -->
+    <section id="products" class="py-20 bg-gradient-to-b from-[#FAF9F6] to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-derma-navy font-bold text-xs uppercase tracking-widest block mb-2">Derma Specialties</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-derma-navy">Our Specialized Skincare Range</h2>
+                <div class="h-1 w-20 bg-derma-navy mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-derma-slate/85 font-medium">
+                    Aapki skin concern chahe jo ho - Acne, Pigmentation, Aging, ya Hair loss, Inhance ke pass dermatologist-approved solution maujood hai.
+                </p>
+            </div>
+
+            <!-- Interactive Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-12 border-b border-gray-150 pb-6 max-w-4xl mx-auto">
+                <button onclick="filterCategory('all')" id="tab-all" class="product-tab px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300 bg-derma-navy text-white shadow-md shadow-navy/20">
+                    All Products
+                </button>
+                <button onclick="filterCategory('serums')" id="tab-serums" class="product-tab px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300 bg-white text-derma-navy border border-gray-200 hover:border-derma-navy">
+                    Serums & Face Oils
+                </button>
+                <button onclick="filterCategory('creams')" id="tab-creams" class="product-tab px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300 bg-white text-derma-navy border border-gray-200 hover:border-derma-navy">
+                    Creams & Ointments
+                </button>
+                <button onclick="filterCategory('sunscreens')" id="tab-sunscreens" class="product-tab px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300 bg-white text-derma-navy border border-gray-200 hover:border-derma-navy">
+                    Sun Protection (SPF)
+                </button>
+                <button onclick="filterCategory('hair')" id="tab-hair" class="product-tab px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300 bg-white text-derma-navy border border-gray-200 hover:border-derma-navy">
+                    Trichology & Scalp
+                </button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid">
+                
+                <!-- Product 1: Vit C Serum (Serums Category) -->
+                <div class="bg-[#FAF9F6] border border-gray-100 rounded-3xl p-6 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between product-card cursor-pointer" data-category="serums">
+                    <div>
+                        <div class="relative bg-white rounded-2xl p-6 flex justify-center mb-6 overflow-hidden min-h-[220px] items-center">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-[#FAF2ED] to-white"></div>
+                            <i class="fa-solid fa-prescription-bottle-medical text-6xl text-derma-gold relative z-10"></i>
+                            <span class="absolute top-3 left-3 bg-derma-navy text-white font-bold text-[9px] uppercase px-2.5 py-1 rounded-md">Best Seller</span>
+                        </div>
+                        <span class="text-xs font-bold text-derma-gold uppercase tracking-widest">Active Serum</span>
+                        <h3 class="text-xl font-bold text-derma-navy mt-1">Vit-C Glow Catalyst 15%</h3>
+                        <p class="text-derma-slate/85 text-xs mt-2 font-semibold">Ethyl Ascorbic Acid + Hyaluronic Acid + Ferulic Acid formulation.</p>
+                        <p class="text-gray-500 text-xs mt-2">Dullness aur hyperpigmentation ko combat karne aur collagen growth boost karne ke liye premium skin serum.</p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-250/40 mt-6 flex justify-between items-center">
+                        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full"><i class="fa-solid fa-vial"></i> Clinical Strength</span>
+                        <a href="#contact" class="text-derma-navy font-bold text-xs uppercase hover:text-derma-gold">Inquire <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Salicylic Acid Serum (Serums Category) -->
+                <div class="bg-[#FAF9F6] border border-gray-100 rounded-3xl p-6 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between product-card cursor-pointer" data-category="serums">
+                    <div>
+                        <div class="relative bg-white rounded-2xl p-6 flex justify-center mb-6 overflow-hidden min-h-[220px] items-center">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-[#FAF2ED] to-white"></div>
+                            <i class="fa-solid fa-eye-dropper text-6xl text-blue-900/60 relative z-10"></i>
+                        </div>
+                        <span class="text-xs font-bold text-blue-900/60 uppercase tracking-widest">Acne Defense</span>
+                        <h3 class="text-xl font-bold text-derma-navy mt-1">Salicylic-2 Pore Cleanse</h3>
+                        <p class="text-derma-slate/85 text-xs mt-2 font-semibold">2% Salicylic Acid (BHA) + Witch Hazel extract.</p>
+                        <p class="text-gray-500 text-xs mt-2">Acne breakouts, blackheads aur excess sebum oil ko deep clean karne ke liye targeted face oil/serum solution.</p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-250/40 mt-6 flex justify-between items-center">
+                        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full"><i class="fa-solid fa-vial"></i> Non-Comedogenic</span>
+                        <a href="#contact" class="text-derma-navy font-bold text-xs uppercase hover:text-derma-gold">Inquire <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 3: Barrier Gel Cream (Creams Category) -->
+                <div class="bg-[#FAF9F6] border border-gray-100 rounded-3xl p-6 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between product-card cursor-pointer" data-category="creams">
+                    <div>
+                        <div class="relative bg-white rounded-2xl p-6 flex justify-center mb-6 overflow-hidden min-h-[220px] items-center">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-[#FAF2ED] to-white"></div>
+                            <i class="fa-solid fa-pump-soap text-6xl text-derma-gold relative z-10"></i>
+                        </div>
+                        <span class="text-xs font-bold text-derma-gold uppercase tracking-widest">Barrier Repair</span>
+                        <h3 class="text-xl font-bold text-derma-navy mt-1">Cera-Barrier Repair Cream</h3>
+                        <p class="text-derma-slate/85 text-xs mt-2 font-semibold">Ceramide Complex + Phytosphingosine + Glycerin.</p>
+                        <p class="text-gray-500 text-xs mt-2">Skin barrier repairing cream jo dryness, peeling skin aur redness ko reduce kar skin elasticity ko hold karegi.</p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-250/40 mt-6 flex justify-between items-center">
+                        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full"><i class="fa-solid fa-vial"></i> Dry-Normal Skin</span>
+                        <a href="#contact" class="text-derma-navy font-bold text-xs uppercase hover:text-derma-gold">Inquire <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 4: SPF 50 Gel (Sunscreens Category) -->
+                <div class="bg-[#FAF9F6] border border-gray-100 rounded-3xl p-6 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between product-card cursor-pointer" data-category="sunscreens">
+                    <div>
+                        <div class="relative bg-white rounded-2xl p-6 flex justify-center mb-6 overflow-hidden min-h-[220px] items-center">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-[#FAF2ED] to-white"></div>
+                            <i class="fa-solid fa-sun text-6xl text-amber-500 relative z-10"></i>
+                            <span class="absolute top-3 left-3 bg-amber-500 text-white font-bold text-[9px] uppercase px-2.5 py-1 rounded-md">SPF 50 PA+++</span>
+                        </div>
+                        <span class="text-xs font-bold text-amber-600 uppercase tracking-widest">Sun Shield</span>
+                        <h3 class="text-xl font-bold text-derma-navy mt-1">Inhance Matte-Shield Gel</h3>
+                        <p class="text-derma-slate/85 text-xs mt-2 font-semibold">Broad Spectrum UV Protection + Oil-Free formula.</p>
+                        <p class="text-gray-500 text-xs mt-2">Gel-based non-greasy sunscreen jo ultra-protection pradan karta hai bina kisi heavy white-cast ke.</p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-250/40 mt-6 flex justify-between items-center">
+                        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full"><i class="fa-solid fa-vial"></i> Matte Finish</span>
+                        <a href="#contact" class="text-derma-navy font-bold text-xs uppercase hover:text-derma-gold">Inquire <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 5: Anti Hairfall Solution (Hair Category) -->
+                <div class="bg-[#FAF9F6] border border-gray-150 rounded-3xl p-6 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between product-card cursor-pointer" data-category="hair">
+                    <div>
+                        <div class="relative bg-white rounded-2xl p-6 flex justify-center mb-6 overflow-hidden min-h-[220px] items-center">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-[#FAF2ED] to-white"></div>
+                            <i class="fa-solid fa-droplet text-6xl text-emerald-600 relative z-10"></i>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest">Trichology</span>
+                        <h3 class="text-xl font-bold text-derma-navy mt-1">Follicle Vitalizing Serum</h3>
+                        <p class="text-derma-slate/85 text-xs mt-2 font-semibold">Redensyl 3% + Procapil 2% + Biotin formulation.</p>
+                        <p class="text-gray-500 text-xs mt-2">Naye hair cells ki development aur stem cells ko activate karne ke liye premium scalp vitality treatment.</p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-250/40 mt-6 flex justify-between items-center">
+                        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full"><i class="fa-solid fa-vial"></i> Anti-Hair Loss</span>
+                        <a href="#contact" class="text-derma-navy font-bold text-xs uppercase hover:text-derma-gold">Inquire <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product 6: Under Eye Recovery Cream (Creams Category) -->
+                <div class="bg-[#FAF9F6] border border-gray-100 rounded-3xl p-6 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between product-card cursor-pointer" data-category="creams">
+                    <div>
+                        <div class="relative bg-white rounded-2xl p-6 flex justify-center mb-6 overflow-hidden min-h-[220px] items-center">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-[#FAF2ED] to-white"></div>
+                            <i class="fa-solid fa-spa text-6xl text-derma-gold relative z-10"></i>
+                        </div>
+                        <span class="text-xs font-bold text-derma-gold uppercase tracking-widest">Eye Rejuvenation</span>
+                        <h3 class="text-xl font-bold text-derma-navy mt-1">Inhance Multi-Active Eye Cream</h3>
+                        <p class="text-derma-slate/85 text-xs mt-2 font-semibold">Caffeine + Peptide complex + Retinol.</p>
+                        <p class="text-gray-500 text-xs mt-2">Dark circles, under-eye puffiness aur early stage fine wrinkles lines ko repair karne ke liye targeted eye treatment.</p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-250/40 mt-6 flex justify-between items-center">
+                        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full"><i class="fa-solid fa-vial"></i> Clinical Therapy</span>
+                        <a href="#contact" class="text-derma-navy font-bold text-xs uppercase hover:text-derma-gold">Inquire <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- R&D and Clinical Quality Standards -->
+    <section id="quality" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Visual Left Graphics -->
+                <div class="order-2 lg:order-1 flex justify-center">
+                    <div class="w-full max-w-lg bg-derma-peach rounded-[2.5rem] p-8 border border-amber-200/30 relative">
+                        <!-- Design elements of microscopic biological cells -->
+                        <div class="absolute -top-4 -right-4 w-20 h-20 bg-derma-gold/15 rounded-full filter blur-xl"></div>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                                <div class="bg-amber-100 text-derma-gold p-3.5 rounded-xl text-xl shadow-inner">
+                                    <i class="fa-solid fa-clipboard-check"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-derma-navy">Physician & Expert Approved</h4>
+                                    <p class="text-derma-slate/85 text-xs mt-1">Dermatologists, Cosmetologists aur Trichologists ke feedback par products design aur update hote hain.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                                <div class="bg-blue-100 text-derma-navy p-3.5 rounded-xl text-xl shadow-inner">
+                                    <i class="fa-solid fa-dna"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-derma-navy">Advanced Bio-Formulations</h4>
+                                    <p class="text-derma-slate/85 text-xs mt-1">Humare partners key raw active materials Europe aur Korea ke leading biotech research center se import karte hain.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4 bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                                <div class="bg-emerald-100 text-emerald-800 p-3.5 rounded-xl text-xl shadow-inner">
+                                    <i class="fa-solid fa-prescription-bottle"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-derma-navy">Rigorous Batch Control (QC)</h4>
+                                    <p class="text-derma-slate/85 text-xs mt-1">Har ek production batch multi-stage stability, microbial and toxicity chemical levels par standard checks se guzarta hai.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Right Explanation -->
+                <div class="space-y-6 order-1 lg:order-2">
+                    <span class="text-derma-gold font-bold text-xs uppercase tracking-widest block">No Compromise on Efficacy</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-derma-navy leading-tight">Advanced Skincare Quality That Skin Trusts</h2>
+                    <p class="text-derma-slate/85 text-base sm:text-lg">
+                        Har ek skin delicate aur sensitive hoti hai. Hum is sanvedansheelta ko samajhte hain. Inhance Pharmaceuticals clinical standards, strict WHO-GMP rules aur eco-friendly safety regulations ko strictly follow karta hai.
+                    </p>
+                    <p class="text-gray-500 text-sm">
+                        Humare standard units high-precision automation se chalte hain taaki chemical oxidation minimal ho aur high concentrations active vitamins ki real performance patient ke skin results par positive asar dikhaye.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="border-l-4 border-derma-gold pl-4">
+                            <span class="text-3xl font-black text-derma-navy block">ISO 9001</span>
+                            <span class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Quality Management</span>
+                        </div>
+                        <div class="border-l-4 border-emerald-600 pl-4">
+                            <span class="text-3xl font-black text-emerald-800 block">Cruelty-0</span>
+                            <span class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Cruelty-Free Testing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Lead Form Section -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-[#FAF9F6] to-white border-t border-gray-150/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-derma-gold font-bold text-xs uppercase tracking-widest block mb-2">Connect Instantly</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-derma-navy">Start Your Derma Business Today</h2>
+                <div class="h-1 w-20 bg-derma-gold mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-derma-slate/85 font-medium">
+                    Product availability, order booking ya bulk chemical supply ke liye aaj hi contact karein. Humari dedicated desk aapse jald sampark karegi.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Details column -->
+                <div class="lg:col-span-5 bg-white p-8 rounded-3xl shadow-xl shadow-slate-900/5 space-y-6 border border-gray-100">
+                    <h3 class="text-2xl font-bold text-derma-navy mb-4">Inhance Head Office</h3>
+                    
+                    <!-- Leadership contacts -->
+                    <div class="bg-derma-peach/50 p-4 rounded-2xl border border-amber-200/30 space-y-2 mb-4">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-derma-gold">Executive Leadership</h4>
+                        <div class="text-xs text-derma-navy font-semibold space-y-1">
+                            <div>Managing Director: <span class="font-extrabold">Anoop Tripathi</span></div>
+                            <div>Director: <span class="font-extrabold">Amla Prasad</span></div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="text-derma-gold text-xl mt-1">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-derma-navy">Corporate Address</h4>
+                            <p class="text-derma-slate/80 text-sm mt-1">
+                                Inhance Pharmaceuticals Pvt. Ltd.<br>
+                                [Corporate office address, City, State, India]<br>
+                                Pin: [Pin Code]
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="text-derma-gold text-xl mt-1">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-derma-navy">E-mail Addresses</h4>
+                            <p class="text-derma-slate/80 text-sm mt-1">
+                                <a href="mailto:info@inhancepharma.com" class="hover:text-derma-gold transition block">info@inhancepharma.com</a>
+                                <a href="mailto:sales@inhancepharma.com" class="hover:text-derma-gold transition block">sales@inhancepharma.com</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="text-derma-gold text-xl mt-1">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-derma-navy">Business Help Line</h4>
+                            <p class="text-derma-slate/80 text-sm mt-1">
+                                <a href="tel:+918574308017" class="hover:text-derma-gold transition font-black block text-lg text-emerald-800">+91 85743 08017</a>
+                                <span class="text-xs text-gray-400 block mt-0.5">Corporate Hours: 10:00 AM - 6:00 PM (Monday - Saturday)</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Location Graphic Map placeholder -->
+                    <div class="pt-6 border-t border-gray-100">
+                        <div class="bg-[#FAF2ED] rounded-2xl p-6 flex flex-col items-center justify-center text-center h-32 border border-amber-200/30">
+                            <i class="fa-solid fa-map-location-dot text-3xl text-derma-navy mb-2 animate-bounce"></i>
+                            <span class="text-xs font-bold text-derma-navy uppercase tracking-widest">MAP INTEGRATION ACTIVE FOR INHANCEPHARMA.COM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <div class="lg:col-span-7 bg-white p-8 rounded-3xl shadow-xl shadow-slate-900/5 border border-gray-100">
+                    <h3 class="text-2xl font-bold text-derma-navy mb-6">Drop Your Requirements</h3>
+                    <form id="contactForm" class="space-y-6" onsubmit="handleFormSubmit(event)">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-derma-navy mb-2" for="name">Your Full Name *</label>
+                                <input type="text" id="name" required class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-derma-gold focus:bg-white transition duration-300">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-derma-navy mb-2" for="phone">Active Mobile No *</label>
+                                <input type="tel" id="phone" required class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-derma-gold focus:bg-white transition duration-300">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-derma-navy mb-2" for="email">E-mail ID *</label>
+                                <input type="email" id="email" required class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-derma-gold focus:bg-white transition duration-300">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-derma-navy mb-2" for="city">State / City name *</label>
+                                <input type="text" id="city" required class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-derma-gold focus:bg-white transition duration-300" placeholder="e.g. Mumbai, Maharashtra">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-derma-navy mb-2" for="purpose">Your Requirement Segment</label>
+                            <select id="purpose" class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-derma-gold focus:bg-white transition duration-300 text-sm">
+                                <option value="manufacturing">Third Party Contract Manufacturing</option>
+                                <option value="bulk">Bulk Skin Clinic Purchase / Supply</option>
+                                <option value="general" selected>General Corporate Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-derma-navy mb-2" for="message">Detailed Message *</label>
+                            <textarea id="message" rows="4" required class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-derma-gold focus:bg-white transition duration-300" placeholder="Mention products you are interested in..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-derma-navy to-slate-800 hover:from-derma-gold hover:to-amber-600 text-white hover:text-derma-navy font-bold py-4 rounded-xl transition duration-300 uppercase tracking-widest text-xs shadow-lg">
+                            Send Business Query <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+
+                    <!-- Feedback notification system (No alerts used) -->
+                    <div id="form-feedback" class="hidden mt-4 p-4 rounded-xl text-center font-bold text-sm transition-all duration-300"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-derma-navy text-gray-400 pt-16 pb-8 border-t-2 border-derma-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-white/10">
+                <!-- Info Section -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3 text-white">
+                        <div class="bg-white p-1 rounded-xl shadow-md border border-white/10 flex items-center justify-center h-12 w-12 overflow-hidden">
+                            <img src="WhatsApp Image 2026-06-23 at 12.59.39 AM.jpeg" alt="Inhance Logo" class="h-full w-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/0f2a4a?text=IP';">
+                        </div>
+                        <span class="text-xl font-extrabold tracking-widest text-white">INHANCE PHARMACEUTICALS</span>
+                    </div>
+                    <p class="text-sm max-w-sm text-gray-400 leading-relaxed">
+                        Science-backed skin recovery, premium dermatology, cosmetic formulations aur advanced hair-growth solutions. Complete premium care for healthy skin.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 hover:bg-derma-gold hover:text-derma-navy rounded-xl flex items-center justify-center text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 hover:bg-derma-gold hover:text-derma-navy rounded-xl flex items-center justify-center text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 hover:bg-derma-gold hover:text-derma-navy rounded-xl flex items-center justify-center text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Navigation -->
+                <div>
+                    <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-4 border-l-2 border-derma-gold pl-3">Quick Navigation</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#home" class="hover:text-white transition block"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-derma-gold"></i>Home</a></li>
+                        <li><a href="#philosophy" class="hover:text-white transition block"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-derma-gold"></i>Our Philosophy</a></li>
+                        <li><a href="#leadership" class="hover:text-white transition block"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-derma-gold"></i>Leadership</a></li>
+                        <li><a href="#products" class="hover:text-white transition block"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-derma-gold"></i>Derma Portfolio</a></li>
+                        <li><a href="#contact" class="hover:text-white transition block"><i class="fa-solid fa-chevron-right text-[10px] mr-2 text-derma-gold"></i>Get in Touch</a></li>
+                    </ul>
+                </div>
+
+                <!-- Safety Certification List -->
+                <div>
+                    <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-4 border-l-2 border-derma-gold pl-3">Legal Compliances</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><i class="fa-solid fa-shield text-derma-gold mr-2 text-xs"></i> WHO-GMP Standards</li>
+                        <li><i class="fa-solid fa-shield text-derma-gold mr-2 text-xs"></i> ISO 9001:2015 Approved</li>
+                        <li><i class="fa-solid fa-shield text-derma-gold mr-2 text-xs"></i> DCGI Certified Molecules</li>
+                        <li><i class="fa-solid fa-shield text-derma-gold mr-2 text-xs"></i> Non-Toxic & Vegan Grade</li>
+                        <li><i class="fa-solid fa-shield text-derma-gold mr-2 text-xs"></i> Trademark Under Registry</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Rights -->
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p class="text-gray-500">&copy; 2026 Inhance Pharmaceuticals Pvt. Ltd. All Rights Reserved.</p>
+                <p class="mt-4 md:mt-0 text-gray-500">Configured & Maintained for <a href="http://inhancepharma.com" target="_blank" class="text-white hover:text-derma-gold underline">inhancepharma.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Logic -->
+    <script>
+        // Adjust Header Style on scroll
+        const navbar = document.getElementById('navbar');
+        const navContainer = document.getElementById('navbar-container');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('backdrop-blur-nav', 'shadow-xl', 'shadow-slate-900/5', 'bg-white/90');
+                navContainer.classList.remove('md:h-24');
+                navContainer.classList.add('md:h-20');
+            } else {
+                navbar.classList.remove('backdrop-blur-nav', 'shadow-xl', 'shadow-slate-900/5', 'bg-white/90');
+                navContainer.classList.remove('md:h-20');
+                navContainer.classList.add('md:h-24');
+            }
+        });
+
+        // Mobile Menu Toggling
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = "fa-solid fa-bars-staggered text-2xl";
+            } else {
+                menuIcon.className = "fa-solid fa-xmark text-2xl";
+            }
+        }
+
+        // Product Catalog Filters Logic
+        function filterCategory(category) {
+            // Update Active Tab Style
+            const tabs = document.querySelectorAll('.product-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-derma-navy', 'text-white', 'shadow-md', 'shadow-navy/20');
+                tab.classList.add('bg-white', 'text-derma-navy', 'border', 'border-gray-200');
+            });
+
+            const activeTab = document.getElementById(`tab-${category}`);
+            activeTab.classList.remove('bg-white', 'text-derma-navy', 'border', 'border-gray-200');
+            activeTab.classList.add('bg-derma-navy', 'text-white', 'shadow-md', 'shadow-navy/20');
+
+            // Filter Products in Grid
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Contact Form Submission Handler (Shows Custom modal state instead of alert)
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const feedback = document.getElementById('form-feedback');
+            const form = document.getElementById('contactForm');
+            
+            feedback.innerHTML = '<i class="fa-solid fa-spinner animate-spin mr-2"></i> Registering your inquiry in secure cloud...';
+            feedback.className = "mt-4 p-4 rounded-xl text-center font-bold bg-blue-50 text-derma-navy border border-blue-200";
+            feedback.classList.remove('hidden');
+
+            setTimeout(() => {
+                feedback.innerHTML = 'Thank You! Aapki inquiry safely receive ho gayi hai. Humara specialized derma executive aapse bohot jald connect karega.';
+                feedback.className = "mt-4 p-4 rounded-xl text-center font-bold bg-emerald-50 text-emerald-850 border border-emerald-300 shadow-md";
+                form.reset();
+                
+                // Automatically hide after 10 seconds
+                setTimeout(() => {
+                    feedback.classList.add('hidden');
+                }, 10000);
+            }, 1800);
+        }
+    </script>
+</body>
+</html>
